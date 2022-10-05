@@ -1,27 +1,25 @@
 package com.bridgelabz;
 
+import java.util.Scanner;
+
 public class PrimeNumber {
-	public static int primeNumberCheck(int num) {
-		int i = 0;
-		int flag = 0;
-		int prime = 0;
-		for (i = 2; i <= (num / 2); i++) {
+	public static boolean primeNumberCheck(int num) {
+		for (int i = 2; i <= (num / 2); i++) {
 			if (num % i == 0) {
-				flag = 1;
-				break;
+				return false;
 			}
 		}
-		if (flag == 0 && num != 1)
-			prime = num;
-		return prime;
+		return true;
 	}
 
 	public static void main(String[] args) {
-		int prime = 0;
-
-		for (int num = 1; num <= 10; num++) {
-			prime = primeNumberCheck(num);
-			if (prime == num) {
+		System.out.println("Enter first number : ");
+		Scanner sc = new Scanner(System.in);
+		int firstNumber = sc.nextInt();
+		System.out.println("Enter last number : ");
+		int lastNumber = sc.nextInt();
+		for (int num = firstNumber; num <= lastNumber; num++) {
+			if (primeNumberCheck(num)) {
 				System.out.println(num);
 			}
 		}

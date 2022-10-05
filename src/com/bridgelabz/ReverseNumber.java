@@ -3,7 +3,7 @@ package com.bridgelabz;
 import java.util.Scanner;
 
 public class ReverseNumber {
-	public static void reversePrint(int num) {
+	public static void reversePrint(int num) { //145
 		int reverse = 0;
 		int remainder = 0;
 		int num1 = num;
